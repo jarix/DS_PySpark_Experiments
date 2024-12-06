@@ -3,7 +3,7 @@ services:
     container_name: jupyter-notebook-container
     image: jupyter-notebook-spark:v0.1
     volumes:
-      - ~/Sandbox/Spark/data:/home/jovyan/data
-      - ~/Sandbox/Spark/work:/home/jovyan/work
+      - ~/MyGithub/DS_Spark_Experiments/data:/home/jovyan/data
+      - ~/MyGithub/DS_Spark_Experiments/work:/home/jovyan/work
     ports:
       - "8888:8888"
