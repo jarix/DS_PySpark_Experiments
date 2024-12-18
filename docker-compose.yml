@@ -6,4 +6,5 @@ services:
       - ~/MyGithub/DS_Spark_Experiments/data:/home/jovyan/data
       - ~/MyGithub/DS_Spark_Experiments/work:/home/jovyan/work
     ports:
-      - "8888:8888"
+      - "8888:8888" # Spark Session
+      - "4040:4040" # Spark UI port
