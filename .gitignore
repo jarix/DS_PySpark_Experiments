@@ -1,3 +1,6 @@
 .venv/
 .git/
+train_images/
+international_flights_csv/
+international_flights_json/
 
