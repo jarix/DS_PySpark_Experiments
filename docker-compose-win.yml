@@ -3,8 +3,8 @@ services:
     container_name: jupyter-notebook-container
     image: jupyter-notebook-spark:v0.1
     volumes:
-      - D:/MyGithub/DS_Spark_Experiments/data:/home/jovyan/data
-      - D:/MyGithub/DS_Spark_Experiments/work:/home/jovyan/work
+      - D:/MyGithub/DS_PySpark_Experiments/data:/home/jovyan/data
+      - D:/MyGithub/DS_PySpark_Experiments/work:/home/jovyan/work
     ports:
       - "8888:8888" # Spark Session
       - "4040:4040" # Spark UI port
