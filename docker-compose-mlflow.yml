@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  spark-master:
+    image: bitnami/spark:latest
+    hostname: spark-master
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+    ports:
+      - "8080:8080"
+    networks:
+      - spark-network
+
+  jupyter-mlflow:
+    build: 
+      context: .
+      dockerfile: Dockerfile-mlflow
+    ports:
+      - "8888:8888" # PySpark Session
+      - "4040:4040" # Spark UI port
+      - "5000:5000" # mlflow UI port
+    networks:
+      - spark-network
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./work:/home/jovyan/work
+    depends_on:
+      - spark-master
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
+
+networks:
+  spark-network:
+volumes:
+  myvol:
